@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TextTransformerApplication {
 
     public static void main(String[] args) {
+        psujemy aplikacje
         SpringApplication.run(TextTransformerApplication.class, args);
     }
 }

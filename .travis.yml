@@ -5,6 +5,6 @@ notifications:
       - maciej.hercog@student.put.poznan.pl
       - maria.mikolajczak@student.put.poznan.pl
       - michal.medzin@student.put.poznan.pl
-      - wojtek.koszela@student.put.poznan.pl
+      - wojciech.koszela@student.put.poznan.pl
     on_success: never # default: change
     on_failure: always # default: always

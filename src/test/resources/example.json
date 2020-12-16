@@ -1,0 +1,9 @@
+{"header":"static",
+  "seotype": "standard",
+  "metaTags": {  "title":"tytul",
+    "type":"type1",
+    "description":"deeescription",
+    "image":"image1"
+  },
+  "footer":true
+}

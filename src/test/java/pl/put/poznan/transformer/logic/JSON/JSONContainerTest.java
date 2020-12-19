@@ -16,7 +16,7 @@ class JSONContainerTest {
     void testCreateFromJSON() throws IOException {
         Path fileName = Path.of(pathPrefix + "example.json");
         String json = Files.readString(fileName);
-        JSONContainer jsonContainer = JSONContainerBuilder.createFromJSON(json);
+        JSONContainer jsonContainer = JSONContainerBuilder.createFromJSON(json);    
 
         assertEquals( "static", jsonContainer.getHeader());
         assertEquals( "standard", jsonContainer.getSeotype());

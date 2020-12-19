@@ -6,3 +6,15 @@ Projekt wykonany przez:
 - Wojciecha Koszele
 - Marie Mikołajczak
 - Michała Mędzina
+
+## Instrukcja użycia
+### Narzędzie `curl`:
+1. Uruchomić aplikację.
+2. W terminalu wpisać:
+
+``
+curl -X GET -H "Content-type: application/json" "{<YOUR JSON CONTENT>}" "localhost:8080/bootsrap_builder/"
+``
+
+Na przykład:
+`curl -X GET -H "Content-type: application/json" "{\"header\" : \"static\"}" "localhost:8080/bootsrap_builder/"`

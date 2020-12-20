@@ -3,8 +3,8 @@ Aplikacja dla programistów webowych, którzy chcą szybko utworzyć szkielet ap
 
 Projekt wykonany przez:
 - Macieja Hercoga
-- Wojciecha Koszele
-- Marie Mikołajczak
+- Wojciecha Koszelę
+- Marię Mikołajczak
 - Michała Mędzina
 
 ## Instrukcja użycia
@@ -13,8 +13,8 @@ Projekt wykonany przez:
 2. W terminalu wpisać:
 
 ``
-curl -X GET -H "Content-type: application/json" "{<YOUR JSON CONTENT>}" "localhost:8080/bootsrap_builder/"
+curl -X GET --header "Content-type: application/json" --data "{<YOUR JSON CONTENT>}" "localhost:8080/bootstrap_builder/"
 ``
 
 Na przykład:
-`curl -X GET -H "Content-type: application/json" "{\"header\" : \"static\"}" "localhost:8080/bootsrap_builder/"`
+`curl -X GET --header "Content-type: application/json" --data "{\"header\" : \"static\"}" "localhost:8080/bootstrap_builder/"`

@@ -8,3 +8,12 @@ notifications:
       - wojciech.koszela@student.put.poznan.pl
     on_success: never # default: change
     on_failure: always # default: always
+deploy:
+  provider: releases
+  api_key: 847225a0535b5e9f2e4df52f3b263dc9c2c6fd0a
+  skip_cleanup: true
+  file_glob: true
+  file:
+    - target/*.jar
+  on:
+    tags: true

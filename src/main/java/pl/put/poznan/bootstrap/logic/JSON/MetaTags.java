@@ -1,4 +1,4 @@
-package pl.put.poznan.transformer.logic.JSON;
+package pl.put.poznan.bootstrap.logic.JSON;
 
 public class MetaTags {
     public static final String title = "title";

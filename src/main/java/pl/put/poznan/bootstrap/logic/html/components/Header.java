@@ -1,4 +1,4 @@
-package pl.put.poznan.transformer.logic.html.components;
+package pl.put.poznan.bootstrap.logic.html.components;
 
 import java.util.HashMap;
 import java.util.Map;

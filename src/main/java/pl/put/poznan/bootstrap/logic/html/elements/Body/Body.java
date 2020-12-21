@@ -1,4 +1,4 @@
-package pl.put.poznan.transformer.logic.html.elements.Body;
+package pl.put.poznan.bootstrap.logic.html.elements.Body;
 
 import java.util.ArrayList;
 import java.util.List;

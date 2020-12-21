@@ -1,8 +1,6 @@
-package pl.put.poznan.transformer.logic.html.elements.Body;
+package pl.put.poznan.bootstrap.logic.html.elements.Body;
 
 import lombok.Getter;
-import lombok.Setter;
-import pl.put.poznan.transformer.logic.html.elements.Head.Head;
 
 public class BodyBuilder {
     @Getter

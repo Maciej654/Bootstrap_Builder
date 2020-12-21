@@ -1,4 +1,4 @@
-package pl.put.poznan.transformer.logic.html.components;
+package pl.put.poznan.bootstrap.logic.html.components;
 
 public class Footer {
     public static final String BODY = "<footer>\n" +

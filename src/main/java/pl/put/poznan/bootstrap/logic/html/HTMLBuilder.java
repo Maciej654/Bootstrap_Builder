@@ -1,10 +1,9 @@
-package pl.put.poznan.transformer.logic.html;
+package pl.put.poznan.bootstrap.logic.html;
 
-import lombok.Getter;
-import pl.put.poznan.transformer.logic.html.components.Footer;
-import pl.put.poznan.transformer.logic.html.components.Header;
-import pl.put.poznan.transformer.logic.html.elements.Body.BodyBuilder;
-import pl.put.poznan.transformer.logic.html.elements.Head.HeadBuilder;
+import pl.put.poznan.bootstrap.logic.html.components.Footer;
+import pl.put.poznan.bootstrap.logic.html.components.Header;
+import pl.put.poznan.bootstrap.logic.html.elements.Body.BodyBuilder;
+import pl.put.poznan.bootstrap.logic.html.elements.Head.HeadBuilder;
 
 public class HTMLBuilder {
     private BodyBuilder bodyBuilder = new BodyBuilder();

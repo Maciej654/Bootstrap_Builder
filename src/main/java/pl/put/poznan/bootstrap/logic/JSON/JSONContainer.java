@@ -1,7 +1,5 @@
-package pl.put.poznan.transformer.logic.JSON;
+package pl.put.poznan.bootstrap.logic.JSON;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

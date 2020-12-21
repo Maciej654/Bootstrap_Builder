@@ -1,6 +1,4 @@
-package pl.put.poznan.transformer.logic.html.elements.Head;
-
-import lombok.Setter;
+package pl.put.poznan.bootstrap.logic.html.elements.Head;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,9 +18,15 @@ public class Head {
                 "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n" +
                 CSS_LINK +
                 "    <title>Szkielet</title>\n" +
-                "<style>\n" +
-                String.join("\n", styleContent) +
-                "\n</style> \n" +
+                styleSection() +
                 " \n </head>\n";
+    }
+
+    private String styleSection(){
+        if(styleContent.size() == 0)
+            return "";
+        return "<style>\n" +
+                String.join("\n", styleContent) +
+                "\n</style> \n";
     }
 }

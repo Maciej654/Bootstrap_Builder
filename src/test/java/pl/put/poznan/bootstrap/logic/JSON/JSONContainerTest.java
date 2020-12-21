@@ -1,8 +1,6 @@
-package pl.put.poznan.transformer.logic.JSON;
+package pl.put.poznan.bootstrap.logic.JSON;
 
 import org.junit.jupiter.api.Test;
-import pl.put.poznan.transformer.logic.html.HTML;
-import pl.put.poznan.transformer.logic.html.HTMLDirector;
 
 import java.io.IOException;
 import java.nio.file.Files;

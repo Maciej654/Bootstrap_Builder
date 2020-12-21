@@ -1,10 +1,9 @@
-package pl.put.poznan.transformer.logic.html;
+package pl.put.poznan.bootstrap.logic.html;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.put.poznan.transformer.logic.BootstrapBuilder;
-import pl.put.poznan.transformer.logic.html.elements.Body.Body;
-import pl.put.poznan.transformer.logic.html.elements.Head.Head;
+import pl.put.poznan.bootstrap.logic.html.elements.Body.Body;
+import pl.put.poznan.bootstrap.logic.html.elements.Head.Head;
 
 
 /**

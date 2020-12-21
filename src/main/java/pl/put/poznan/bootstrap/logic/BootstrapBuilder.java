@@ -1,9 +1,9 @@
-package pl.put.poznan.transformer.logic;
+package pl.put.poznan.bootstrap.logic;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import pl.put.poznan.transformer.logic.html.HTMLDirector;
+import pl.put.poznan.bootstrap.logic.html.HTMLDirector;
 
 /**
  * Handles the creation of a Bootstrap HTML template from user input

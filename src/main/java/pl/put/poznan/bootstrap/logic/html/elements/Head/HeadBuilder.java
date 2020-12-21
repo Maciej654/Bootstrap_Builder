@@ -1,4 +1,4 @@
-package pl.put.poznan.transformer.logic.html.elements.Head;
+package pl.put.poznan.bootstrap.logic.html.elements.Head;
 
 import lombok.Getter;
 

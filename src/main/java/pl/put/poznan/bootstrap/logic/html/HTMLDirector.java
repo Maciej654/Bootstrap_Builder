@@ -1,9 +1,9 @@
-package pl.put.poznan.transformer.logic.html;
+package pl.put.poznan.bootstrap.logic.html;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import pl.put.poznan.transformer.logic.JSON.JSONContainer;
-import pl.put.poznan.transformer.logic.JSON.JSONContainerBuilder;
-import pl.put.poznan.transformer.logic.html.components.Header;
+import pl.put.poznan.bootstrap.logic.JSON.JSONContainer;
+import pl.put.poznan.bootstrap.logic.JSON.JSONContainerBuilder;
+import pl.put.poznan.bootstrap.logic.html.components.Header;
 
 public class HTMLDirector {
     private HTMLBuilder htmlBuilder;

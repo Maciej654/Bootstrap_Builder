@@ -1,7 +1,7 @@
-package pl.put.poznan.transformer.logic.html;
+package pl.put.poznan.bootstrap.logic.html;
 
 import org.junit.jupiter.api.Test;
-import pl.put.poznan.transformer.logic.html.components.Header;
+import pl.put.poznan.bootstrap.logic.html.components.Header;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,4 +1,4 @@
-language: java
+language: Java
 notifications:
   email:
     recipients:
@@ -8,12 +8,3 @@ notifications:
       - wojciech.koszela@student.put.poznan.pl
     on_success: never # default: change
     on_failure: always # default: always
-
-before_deploy:
-  - mvn install
-  deploy:
-    provider: releases
-    api_key:
-      secure: YOUR_API_KEY_ENCRYPTED
-    file: target/bootstrap-builder-2.0.jar
-    skip_cleanup: true

@@ -12,6 +12,7 @@ before_deploy:
   - export TRAVIS_TAG=`mvn help:evaluate -Dexpression=project.version -q -DforceStdout`
   - echo "$TRAVIS_TAG" "$TRAVIS_COMMIT"
   - git tag $TRAVIS_TAG
+  - mvn javadoc:javadoc
 deploy:
   provider: releases
   overwrite: true
@@ -23,3 +24,4 @@ deploy:
     secure: FmUK+iAS1nbmKHpsDNnPR7WWXzgnUQ3M1W46NlBXvZcEkl7FzGkcQq7rnW638QE0HKQ+cgPhdm2tYb+6KfSmwKB8I3GkC4wd2wjMX9oeGzm0f0P/8SdaJPuIu2uuOgYHBOHcEUFtxGCbt3ct9r/lqqOXYiwO+uzGXqCPLr61DeSBhKfczUJhAKvE7X8/vCG9U+nqLBZFN4fPLZOqHshU4tn6sM0UkkedGcrQI2K5u2UlfgzzcgR+GMppVQcXTD/h7aLKJGENGnPNx2OK9gtpNtI7gmmLXTYSpUPz22LJSIvjoSK3sUHE/NwOpU56ZlwLFt76OQWD4xRnXV65jlWhUsEE4cyHAbg+imaQNA+tBbjYif4aioluYY69sw11KE/hUCc87H9kk8UnShT67AuiolgDv4QaIEWsn+Vwgb3Nz5q65EPvo6mv6oObyysi7AcW6r6BAyMs+1h81YCW+bMikx7hZ6ihgg3hrJnmRiuHWqRIpWm+YgyFrf3KQRaEDCFYyIXMTsoiyDYOnuTh38Yn/C1CBxIvCPfVWLorIu5/aom8v3kTlXKAS9c8vay4/MQXB4yz2yTJlCEt/Iudlx6oE2MJskykjwbwcdmqM3QCX0r9qv4EWWgT+atWlo0i+cAgCLk2NQ/a/e96BuHeDnJ7UIfvko+rzjp8paDuzKRf4mY=
   file:
     - target/*.jar
+    - target/site/apidocs/*

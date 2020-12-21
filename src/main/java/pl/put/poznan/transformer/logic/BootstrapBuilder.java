@@ -1,18 +1,38 @@
 package pl.put.poznan.transformer.logic;
 
-/**
- * This is just an example to show that the logic should be outside the REST service.
- */
+import com.fasterxml.jackson.core.JsonProcessingException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import pl.put.poznan.transformer.logic.html.HTMLDirector;
+
 public class BootstrapBuilder {
+    private final static String INVALUD_INPUT_MSG = "Error: Invalid input";
 
-    private final String[] transforms;
+    private static final Logger logger = LoggerFactory.getLogger(BootstrapBuilder.class);
+    private StringBuilder specBuilder = new StringBuilder();
 
-    public BootstrapBuilder(String[] transforms){
-        this.transforms = transforms;
+    public BootstrapBuilder(){}
+
+    public void dropBuffer() {
+        specBuilder = new StringBuilder();
     }
 
-    public String transform(String text){
-        // of course, normally it would do something based on the transforms
-        return text.toUpperCase();
+    public void feedInput(String input) {
+        specBuilder.append(input);
+    }
+
+    public String makeResponse() {
+        String response;
+
+        try {
+            response = new HTMLDirector(specBuilder.toString()).constructHTML().toString();
+        } catch (JsonProcessingException e) {
+            logger.error(e.getMessage());
+            response = INVALUD_INPUT_MSG;
+        } finally {
+            dropBuffer();
+        }
+
+        return response;
     }
 }

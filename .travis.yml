@@ -11,9 +11,7 @@ notifications:
 before_deploy:
   - export TRAVIS_TAG=`mvn help:evaluate -Dexpression=project.version -q -DforceStdout`
   - echo "$TRAVIS_TAG" "$TRAVIS_COMMIT"
-  - if ! git rev-parse "$TRAVIS_TAG" >/dev/null 2>&1; then
-    - git tag $TRAVIS_TAG
-    fi
+  - git tag $TRAVIS_TAG
 deploy:
   provider: releases
   overwrite: true

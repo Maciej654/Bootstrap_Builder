@@ -8,18 +8,13 @@ notifications:
       - wojciech.koszela@student.put.poznan.pl
     on_success: never # default: change
     on_failure: always # default: always
-before_deploy:
-  - export TRAVIS_TAG=`mvn help:evaluate -Dexpression=project.version -q -DforceStdout`
-  - echo "$TRAVIS_TAG" "$TRAVIS_COMMIT"
-  - git tag $TRAVIS_TAG
 deploy:
   provider: releases
-  overwrite: true
-  skip_cleanup: true
-  file_glob: true
-  on:
-    branch: master
   token:
     secure: AZsOAEqIdxmntlqTMkzgo8xSov+UO35uWwBcrUuMLUsfd2XkVSszTeg2J0jhGSaiP777MnYoPtG+bnIm/QxWQskNGGYoVoqQFfLwxcBu7x0aKY9nWBHz3MesvK/K0Zv8rw0C5TFnvme1DaK5tC/hrEneK9O2FyNOh7N+mr67MvxN4VGpg5cAEqCAVVOXYB4CHiziO3fpBDKXRyK8UoCNi11ZsTCMFUBMqB+VCcJ/47IqgkKLYA1AS/a/XRY7YLsTcfS3NE1wZX+gZbT4uXbFw0tTIMCCarE3ElHHdtQdcwCHbks2bPXMBsw9m8//a+C7r+TfU/WqJ5WOZSV0ObClGB5bQ3hjAu6gdCFWxlmBgPCq0mI/9g0ZfLeE4l5gBSUMjdXbjbdeYc3EB8U6o2ouLBEiBm7KeXelxub3mYKkVuXWISqS6Sdrf2rvonJRqbfPK8zWIQyqvFblcgGEP2oCKHBvzrLRPHEuRyW8K2qdzeQqubsOswq2OAg7duA2qbD0U8JlCEISKsDFqSLdAENYd756owPlKHchsjT+FzZMQeGca147fR3bBgPkji7aLylOfBbYu5Y7w0xSGLSgaY5IJM7ThgnGPmr44JfMauiwOpVxURJc/Fc8w/JJB0bOLlmy9JW4ur28zlrYMAvUVvizo+fXk0k5IYPNwNxLMhmAei4=
+  skip_cleanup: true
+  file_glob: true
   file:
     - target/*.jar
+  on:
+    tags: true

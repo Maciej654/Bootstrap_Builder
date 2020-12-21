@@ -6,6 +6,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 import pl.put.poznan.transformer.logic.JSON.JSONContainer;
 import pl.put.poznan.transformer.logic.JSON.JSONContainerBuilder;
+import pl.put.poznan.transformer.logic.html.HTML;
+import pl.put.poznan.transformer.logic.html.HTMLDirector;
 
 @RestController
 @RequestMapping("/bootstrap_builder")
@@ -17,16 +19,14 @@ public class BootstrapBuilderController {
     @RequestMapping(method = RequestMethod.GET)
     @ResponseBody
     public String get(@RequestBody String input) {
-
-        logger.debug(input);
-        System.out.println(input);
-        JSONContainer jsonContainer = null;
+        logger.info(input);
+        String html;
         try {
-            jsonContainer = JSONContainerBuilder.createFromJSON(input);
+             html =  new HTMLDirector(input).constructHTML().toString();
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
+            html = "Error: Invalid input";
         }
-        return "ok";
+        return "{ \"html\" : \"" + html + "\"";
     }
 
 

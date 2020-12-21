@@ -1,6 +1,7 @@
 package pl.put.poznan.transformer.logic.html;
 
 import org.junit.jupiter.api.Test;
+import pl.put.poznan.transformer.logic.html.components.Header;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -10,14 +11,28 @@ class HeaderTest {
     @Test
     public void testStaticHeader(){
         Header header = new Header("static");
-        assertEquals(String.format(".%s{\n\n}\n", CSS_CLASS), header.getCSS());
+        assertEquals(".main-header{\n" +
+                "        width: 100%;\n" +
+                "        position: static;\n" +
+                "        background: #333;\n" +
+                "        padding: 10px 0;\n" +
+                "        color: #fff;\n" +
+                "        top: 0;\n" +
+                "    }\n", header.getCSS());
         assertEquals(String.format("<div class=\"%s\">\n<h1>Nagłówek<h1/>\n</div>\n", CSS_CLASS), header.toString());
     }
 
     @Test
     public void testFixedHeader(){
         Header header = new Header("fixed");
-        assertEquals(String.format(".%s{\ntop: 0;\n}\n", CSS_CLASS), header.getCSS());
+        assertEquals(".main-header{\n" +
+                "        width: 100%;\n" +
+                "        position: fixed;\n" +
+                "        background: #333;\n" +
+                "        padding: 10px 0;\n" +
+                "        color: #fff;\n" +
+                "        top: 0;\n" +
+                "    }\n", header.getCSS());
         assertEquals(String.format("<div class=\"%s\">\n<h1>Nagłówek<h1/>\n</div>\n", CSS_CLASS), header.toString());
     }
 

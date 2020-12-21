@@ -1,7 +1,8 @@
 package pl.put.poznan.transformer.logic.JSON;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import org.junit.jupiter.api.Test;
+import pl.put.poznan.transformer.logic.html.HTML;
+import pl.put.poznan.transformer.logic.html.HTMLDirector;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -28,8 +29,5 @@ class JSONContainerTest {
         assertEquals( "deeescription", metaTags.get(MetaTags.description));
         assertEquals( "image1", metaTags.get(MetaTags.image));
         assertEquals("type1", metaTags.get(MetaTags.type));
-
-
-
     }
 }

@@ -8,7 +8,7 @@ import pl.put.poznan.bootstrap.GUI.JavafxApplication;
 @SpringBootApplication(scanBasePackages = {"pl.put.poznan.bootstrap.GUI"})
 public class BootstrapBuilderJavafxApplication {
 
-    public static void main(String[] args) {
+    public static void launch(String[] args) {
         Application.launch(JavafxApplication.class, args);
     }
 }

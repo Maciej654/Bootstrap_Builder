@@ -1,5 +1,6 @@
 package pl.put.poznan.bootstrap.GUI;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
@@ -12,11 +13,17 @@ import javafx.stage.Stage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
+import pl.put.poznan.bootstrap.logic.JSON.JSONContainer;
+import pl.put.poznan.bootstrap.logic.JSON.JSONContainerBuilder;
+import pl.put.poznan.bootstrap.logic.JSON.MetaTags;
+import pl.put.poznan.bootstrap.logic.html.HTMLBuilder;
+import pl.put.poznan.bootstrap.logic.html.HTMLDirector;
 import pl.put.poznan.bootstrap.rest.BootstrapBuilderController;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 @Component
@@ -44,31 +51,42 @@ public class UiController {
         List<String> typesLst = new ArrayList<>();
         Collections.addAll(typesLst, types);
         headerTypes.setItems(FXCollections.observableList(typesLst));
-        headerTypes.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String was, String is) {
-                if(is != null) selectedHeaderType = is;
-            }
+        headerTypes.getSelectionModel().selectedItemProperty().addListener((observableValue, was, is) -> {
+            if(is != null) selectedHeaderType = is;
         });
         headerTypes.getSelectionModel().select("static");
-        this.buildButton.setOnAction(actionEvent -> {
-            if(ifHeader.isSelected()){
-                // add header
-            }
-            if(ifFooter.isSelected()){
-                // add footer
-            }
-            if(authorTag.getLength()>0){
-                // add author tag
-            }
-            if(descriptionTag.getLength()>0){
-                // add description tag
-            }
-            if(keywordsTag.getLength()>0){
-                // add keywords tag
-            }
-            // add result HTML code to the result TextArea (like below)
-            result.setText("HTML here...");
-        });
+        this.buildButton.setOnAction(actionEvent -> buttonClicked());
+    }
+
+    private void buttonClicked()  {
+        var jsonContainer = createJsonContainer();
+        var htmlDirector = new HTMLDirector(jsonContainer);
+        String html = htmlDirector.constructHTML().toString();
+        result.setText(html);
+    }
+
+    private JSONContainer createJsonContainer(){
+        var builder =  JSONContainer.builder();
+        var metaTags = new HashMap<String,String>();
+
+        if(ifHeader.isSelected()){
+            builder.header(headerTypes.getSelectionModel().getSelectedItem());
+        }
+        if(ifFooter.isSelected()){
+            builder.footer(true);
+        }
+        if(authorTag.getLength() > 0){
+            metaTags.put(MetaTags.author, authorTag.getText());
+        }
+        if(descriptionTag.getLength() > 0){
+            metaTags.put(MetaTags.description, descriptionTag.getText());
+        }
+        if(keywordsTag.getLength() > 0){
+            metaTags.put(MetaTags.keyword, keywordsTag.getText());
+        }
+        if(metaTags.size() > 0){
+            builder.metaTags(metaTags);
+        }
+        return builder.build();
     }
 }

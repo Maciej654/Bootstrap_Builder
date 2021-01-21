@@ -1,5 +1,6 @@
 package pl.put.poznan.bootstrap.logic.JSON;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -13,6 +14,7 @@ import java.util.Map;
  */
 @ToString
 @SuperBuilder
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class JSONContainer {
     @Getter @Setter
     private Map<String, String> metaTags;
@@ -25,4 +27,6 @@ public class JSONContainer {
 
     @Getter @Setter
     private String seotype;
+
+    public JSONContainer() {}
 }

@@ -3,6 +3,7 @@ package pl.put.poznan.bootstrap.logic.JSON;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 
 import java.util.Map;
 
@@ -11,6 +12,7 @@ import java.util.Map;
  * @author Maciej Hercog
  */
 @ToString
+@SuperBuilder
 public class JSONContainer {
     @Getter @Setter
     private Map<String, String> metaTags;

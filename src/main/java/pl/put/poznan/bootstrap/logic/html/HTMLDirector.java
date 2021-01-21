@@ -15,6 +15,12 @@ public class HTMLDirector {
 
     }
 
+    public HTMLDirector(JSONContainer jsonContainer) {
+        this.jsonContainer = jsonContainer;
+        htmlBuilder = new HTMLBuilder();
+
+    }
+
     public HTML constructHTML(){
         if(jsonContainer.getHeader() != null){
             Header header = new Header(jsonContainer.getHeader());

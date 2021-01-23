@@ -1,7 +1,7 @@
 package pl.put.poznan.bootstrap.logic.html.components;
 
 /**
- * class storing information about site's HTML meta tag
+ * class storing information about site's user defined HTML meta tag
  * @author Michał Mędzin
  */
 public class MetaTag {

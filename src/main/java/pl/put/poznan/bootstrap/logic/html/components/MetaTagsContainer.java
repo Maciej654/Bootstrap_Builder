@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class MetaTagsContainer {
 
-    private List<MetaTag> metaTags;
+    private final List<MetaTag> metaTags;
 
     public MetaTagsContainer(Map<String, String> tags){
         metaTags = new ArrayList<>();

@@ -6,8 +6,8 @@ package pl.put.poznan.bootstrap.logic.html.components;
  */
 public class MetaTag {
 
-    private String name;
-    private String content;
+    private final String name;
+    private final String content;
 
     public MetaTag(String name, String content){
         this.name = name;

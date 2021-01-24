@@ -51,7 +51,7 @@ public class Header {
      */
     @Override
     public String toString(){
-        return String.format("<div class=\"%s\">\n<h1>Nagłówek<h1/>\n</div>\n", CSS_CLASS);
+        return String.format("<div class=\"%s\">\n<h1>Nagłówek</h1>\n</div>\n", CSS_CLASS);
     }
 
 }

@@ -2,7 +2,7 @@ package pl.put.poznan.bootstrap.logic.html.components;
 
 public class Footer {
     public static final String BODY = "<footer>\n" +
-                                      "<h2>Stopka<h2/>\n" +
+                                      "<h2>Stopka</h2>\n" +
                                       "</footer>\n";
 
     public static final String STYLE = "footer {\n" +

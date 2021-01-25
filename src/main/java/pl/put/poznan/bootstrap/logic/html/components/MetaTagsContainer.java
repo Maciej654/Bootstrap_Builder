@@ -14,6 +14,9 @@ public class MetaTagsContainer {
 
     public MetaTagsContainer(Map<String, String> tags){
         metaTags = new ArrayList<>();
+        if(tags == null){
+            return;
+        }
         for(String name : tags.keySet()){
             metaTags.add(new MetaTag(name, tags.get(name)));
         }

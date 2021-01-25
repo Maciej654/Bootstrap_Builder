@@ -1,0 +1,5 @@
+popełnione błędy i działania naprawcze:
+
+1. Zbyt duże commity - większa dyscyplina w korzystaniu z gita
+2. Nierównomierny podział pracy wynikający z błędnęgo oszacowania czasochłonności zadań - lepsze planowanie następnych sprintów
+3. Błędy w zrozumieniu poszczególnych zadań -  lepsze zrozumienie zadań przed ich wykonaniem, kontakt z Product Ownerem.

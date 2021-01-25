@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import pl.put.poznan.bootstrap.logic.JSON.JSONContainer;
 import pl.put.poznan.bootstrap.logic.JSON.JSONContainerBuilder;
 import pl.put.poznan.bootstrap.logic.html.components.Header;
+import pl.put.poznan.bootstrap.logic.html.components.MetaTagsContainer;
 
 public class HTMLDirector {
     private HTMLBuilder htmlBuilder;
@@ -24,7 +25,8 @@ public class HTMLDirector {
     public HTML constructHTML(){
         if(jsonContainer.getHeader() != null){
             Header header = new Header(jsonContainer.getHeader());
-            htmlBuilder.buildHeader(header);
+            MetaTagsContainer metaTagsContainer = new MetaTagsContainer(jsonContainer.getMetaTags());
+            htmlBuilder.buildHeader(header, metaTagsContainer);
         }
         if(jsonContainer.isFooter()){
             htmlBuilder.buildFooter();

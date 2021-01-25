@@ -1,4 +1,4 @@
-package pl.put.poznan.bootstrap.logic.html;
+package pl.put.poznan.bootstrap.logic.html.components;
 
 import org.junit.jupiter.api.Test;
 import pl.put.poznan.bootstrap.logic.html.components.Header;

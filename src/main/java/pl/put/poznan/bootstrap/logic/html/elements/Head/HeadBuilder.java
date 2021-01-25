@@ -1,6 +1,7 @@
 package pl.put.poznan.bootstrap.logic.html.elements.Head;
 
 import lombok.Getter;
+import pl.put.poznan.bootstrap.logic.html.components.MetaTagsContainer;
 
 public class HeadBuilder {
     @Getter
@@ -10,5 +11,6 @@ public class HeadBuilder {
         head.addStyle(style);
     }
 
+    public void addMetaTags(MetaTagsContainer metaTagsContainer) { head.addMetaTags(metaTagsContainer.toString()); }
 
 }

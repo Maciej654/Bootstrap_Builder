@@ -2,6 +2,7 @@ package pl.put.poznan.bootstrap.logic.html;
 
 import pl.put.poznan.bootstrap.logic.html.components.Footer;
 import pl.put.poznan.bootstrap.logic.html.components.Header;
+import pl.put.poznan.bootstrap.logic.html.components.MetaTagsContainer;
 import pl.put.poznan.bootstrap.logic.html.elements.Body.BodyBuilder;
 import pl.put.poznan.bootstrap.logic.html.elements.Head.HeadBuilder;
 
@@ -9,8 +10,9 @@ public class HTMLBuilder {
     private BodyBuilder bodyBuilder = new BodyBuilder();
     private HeadBuilder headBuilder = new HeadBuilder();
 
-    public void buildHeader(Header header){
+    public void buildHeader(Header header, MetaTagsContainer metaTagsContainer){
         headBuilder.addStyleContent(header.getCSS());
+        headBuilder.addMetaTags(metaTagsContainer);
         bodyBuilder.addContent(header.toString());
     }
 

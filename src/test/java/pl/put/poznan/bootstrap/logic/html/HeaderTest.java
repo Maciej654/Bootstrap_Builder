@@ -19,7 +19,7 @@ class HeaderTest {
                 "        color: #fff;\n" +
                 "        top: 0;\n" +
                 "    }\n", header.getCSS());
-        assertEquals(String.format("<div class=\"%s\">\n<h1>Nagłówek<h1/>\n</div>\n", CSS_CLASS), header.toString());
+        assertEquals(String.format("<div class=\"%s\">\n<h1>Nagłówek</h1>\n</div>\n", CSS_CLASS), header.toString());
     }
 
     @Test
@@ -33,7 +33,7 @@ class HeaderTest {
                 "        color: #fff;\n" +
                 "        top: 0;\n" +
                 "    }\n", header.getCSS());
-        assertEquals(String.format("<div class=\"%s\">\n<h1>Nagłówek<h1/>\n</div>\n", CSS_CLASS), header.toString());
+        assertEquals(String.format("<div class=\"%s\">\n<h1>Nagłówek</h1>\n</div>\n", CSS_CLASS), header.toString());
     }
 
 

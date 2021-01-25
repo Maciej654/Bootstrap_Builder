@@ -15,7 +15,10 @@ public class HTMLBuilder {
         headBuilder.addMetaTags(metaTagsContainer);
         bodyBuilder.addContent(header.toString());
     }
-
+    public void buildHeader(Header header){
+        headBuilder.addStyleContent(header.getCSS());
+        bodyBuilder.addContent(header.toString());
+    }
     public void buildFooter(){
 
         headBuilder.addStyleContent(Footer.STYLE);
